@@ -46,7 +46,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
-            "@php breeze:install --ansi",
+            "@php artisan breeze:install --ansi",
             "@php artisan migrate --ansi"
         ]
     },
