@@ -9,7 +9,8 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        // TODO Opdracht 2: Haal alle Posts op uit de database
+        $posts = null;
 
         return view('posts.index', compact('posts'));
     }
@@ -26,12 +27,8 @@ class PostsController extends Controller
             $image_path = $request->file('image')->store('public/images');
         }
 
-        Post::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'image' => $image_path,
-            'user_id' => auth()->id(),
-        ]);
+        // TODO Opdracht 1: Maak hier een Post aan
+
 
         return redirect()->route('posts.index');
     }
@@ -53,18 +50,15 @@ class PostsController extends Controller
             $image_path = $request->file('image')->store('public/images');
         }
 
-        $post->update([
-            'title' => $request->title,
-            'description' => $request->description,
-            'image' => $image_path,
-        ]);
+        // TODO Opdracht 4: Update de Post
+
 
         return redirect()->route('posts.show', $post);
     }
 
     public function destroy(Post $post)
     {
-        $post->delete();
+        // TODO Opdracht 5: Verwijder de Post
 
         return redirect()->route('posts.index');
     }

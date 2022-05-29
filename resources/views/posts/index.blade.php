@@ -19,17 +19,20 @@
             <a class="auth-button" href="{{ route('register') }}">Maak een account aan</a>
         @endauth
     </div>
-    @foreach($posts as $post)
-        <a href="{{ route('posts.show', $post) }}">
-            <div class="card">
-                <img src="{{ asset($post->getImagePath()) }}">
-                <div>
-                    <h1>{{ $post->title }}</h1>
-                    <h3>{{ $post->user->name }}</h3>
-                </div>
+
+    {{--    TODO Opdracht 3: Maak dit dynamisch en voor alle Posts      --}}
+    <a href="">
+        <div class="card">
+            <img
+                src="https://www.zooplus.nl/magazine/wp-content/uploads/2018/08/arriv%C3%A9e-dun-chaton-%C3%A0-la-maison-1024x730.jpeg">
+            <div>
+                <h1>Schattige kitten</h1>
+                <h3>Coen</h3>
             </div>
-        </a>
-    @endforeach
+        </div>
+    </a>
+    {{--    Eind      --}}
+
 </div>
 </body>
 </html>
